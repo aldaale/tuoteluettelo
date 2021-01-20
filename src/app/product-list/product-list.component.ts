@@ -7,7 +7,7 @@ import { phones } from '../phones';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-
+  value = 'Search something...';
   phones = phones;
   constructor() { }
 
