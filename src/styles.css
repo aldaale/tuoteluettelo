@@ -16,7 +16,6 @@ h1 {
     padding: 0rem 2rem ;
 }
 
-
 .phoneBox {
     padding: 2rem;
     margin: 2rem;
@@ -24,19 +23,27 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     position: relative;
-    padding: 9px;
+    padding: 15px; 
     transition: transform 0.2s;
-    /* flex-direction: column; */
+    flex-direction: column; 
+    z-index: 1;
+    display: block;
+    /* hover off */
+    transition: all 0s ease-in-out; 
 }
 
-.phoneBox::hover {
-    transform: scale(1.3);
+.phoneBox:hover {
+   /* HOVER ON  */
+  transform: scale(1.1); 
 }
-.phoneName {
     
+
+.phoneName {
     color: #990AE3;
+  
 }
 
 .image {
     order: 1;
+    width: 10%;
 }

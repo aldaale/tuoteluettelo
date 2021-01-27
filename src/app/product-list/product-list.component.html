@@ -1,15 +1,24 @@
 
-<div class="searchBar">
-<input matInput type="text" [(ngModel)]="value" >
-</div>
+<div class="sivu">
+<div>
+   <label>Search </label>
+   <input type="text" [(ngModel)]="term">
+</div>  
 
+<label>Sort: </label>
+<select (change)="selectChange($event)">
+   <option value="age">Newest</option>
+   <option value="name">Alphabetical</option>
+ </select>
 
-<div class="phoneBox" *ngFor="let phone of phones">
-   <h3 class="phoneName">{{ phone.name }}</h3>
+<div class="phoneBox" *ngFor="let phone of phones | filter:term | orderBy: order"  >
+   <h3 class="phoneName">{{ phone.name }}
+      <!-- <a [title]="phone.name + ' details'" [routerLink]="['/products', productId]">
+		</a> -->
+   </h3>
    <p class="snippet">{{ phone.snippet }}</p>
    <figure class="image">
       <img src="{{phone.imageUrl}}" >
    </figure>
-
 </div>
-
+</div>
