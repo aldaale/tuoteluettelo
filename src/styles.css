@@ -17,33 +17,36 @@ h1 {
 }
 
 .phoneBox {
-    padding: 2rem;
     margin: 2rem;
     border-radius: 0.9rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
-    position: relative;
+    flex-direction: row; 
+    flex-wrap: nowrap;
+    /* justify-content: flex-end; */
+    width: 70rem;
+    /* position: relative; */
     padding: 15px; 
     transition: transform 0.2s;
-    flex-direction: column; 
     z-index: 1;
-    display: block;
+    /* display: block; */
+
+
     /* hover off */
-    transition: all 0s ease-in-out; 
+    transition: all 0.1s ease-in-out; 
 }
 
 .phoneBox:hover {
    /* HOVER ON  */
   transform: scale(1.1); 
+  margin: 10px;
 }
     
-
 .phoneName {
     color: #990AE3;
   
 }
 
-.image {
-    order: 1;
-    width: 10%;
+.image img {
+    width: 100px;
 }

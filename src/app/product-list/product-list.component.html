@@ -12,13 +12,18 @@
  </select>
 
 <div class="phoneBox" *ngFor="let phone of phones | filter:term | orderBy: order"  >
-   <h3 class="phoneName">{{ phone.name }}
+   <div>
+      <figure class="image">
+         <img src="{{phone.imageUrl}}" >
+      </figure>
+   </div>
+   <div>
+      <div>
+         <h3><a routerLink='/tiedot' routerLinkActive="true">{{phone.name}}</a></h3>
+         <p>{{phone.snippet}}</p>
+   </div>
+  
       <!-- <a [title]="phone.name + ' details'" [routerLink]="['/products', productId]">
 		</a> -->
-   </h3>
-   <p class="snippet">{{ phone.snippet }}</p>
-   <figure class="image">
-      <img src="{{phone.imageUrl}}" >
-   </figure>
 </div>
 </div>
