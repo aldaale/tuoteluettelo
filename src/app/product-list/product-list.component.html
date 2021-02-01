@@ -1,29 +1,37 @@
-
-<div class="sivu">
-<div>
-   <label>Search </label>
-   <input type="text" [(ngModel)]="term">
+<section class="parent">
+<div class="haku">
+   <label>Search: </label>
+         <input type="text" [(ngModel)]="term">
+   <label>Sort: </label>
+   <select (change)="selectChange($event)">
+         <option value="age">Newest</option>
+         <option value="name">Alphabetical</option>
+ </select>
 </div>  
 
-<label>Sort: </label>
-<select (change)="selectChange($event)">
-   <option value="age">Newest</option>
-   <option value="name">Alphabetical</option>
- </select>
+<section class="puhelimet">
+   <div class="phoneBox" *ngFor="let phone of phones | filter:term | orderBy: order">
 
-<div class="phoneBox" *ngFor="let phone of phones | filter:term | orderBy: order"  >
-   <div>
-      <figure class="image">
-         <img src="{{phone.imageUrl}}" >
-      </figure>
-   </div>
-   <div>
-      <div>
+      <a routerLink="{{ phone.id }}">
+         <div>
+            <figure class="image">
+               <img src="{{ phone.imageUrl }}">
+            </figure>
+         </div>
+         <div>
+            <h3>{{phone.name}}</h3>
+            <p>{{ phone.snippet }}</p>
+         </div>
+      </a>
+      <!-- <div>
+      <div class="tuoteotsikko">
          <h3><a routerLink='/tiedot' routerLinkActive="true">{{phone.name}}</a></h3>
          <p>{{phone.snippet}}</p>
-   </div>
-  
+   </div> -->
+
       <!-- <a [title]="phone.name + ' details'" [routerLink]="['/products', productId]">
 		</a> -->
-</div>
-</div>
+   </div>
+   <!-- </div> -->
+</section>
+</section>

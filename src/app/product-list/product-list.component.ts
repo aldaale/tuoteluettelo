@@ -1,26 +1,34 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { phones } from '../phones';
 
 
+ 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  phones = phones; 
-  order: string = '';
+ 
+  phones: any[];
   term;
-
-  constructor() { }
-
-  ngOnInit(): void {
+  order: string = '';
+ 
+  constructor(private http: HttpClient) {
     
+   }
+ 
+  ngOnInit(): void {
+    this.http.get<any[]>("../../assets/puhelinten-tuotetiedot/phones/phones.json").subscribe(
+      (data) => {
+        this.phones = data;
+        console.log("phones:", this.phones)
+      }
+    );
   }
-
-  selectChange(event:any) {
+ 
+  selectChange(event: any) {
     this.order = event.target.value;
   }
-
+ 
 }

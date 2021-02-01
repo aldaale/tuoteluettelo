@@ -7,13 +7,18 @@ import { FormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // search juttu
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OrderModule } from 'ngx-order-pipe';
 
+
+const appRoutes: Routes = [
+  { path: 'products', component: ProductListComponent },
+  { path: 'products/:productId', component: ProductDetailsComponent },
+];
 
 @NgModule({
   declarations: [
@@ -30,10 +35,7 @@ import { OrderModule } from 'ngx-order-pipe';
     Ng2SearchPipeModule,
     OrderModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      { path: 'products/:productId', component: ProductDetailsComponent },
-    ])
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
