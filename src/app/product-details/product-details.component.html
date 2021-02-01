@@ -1,0 +1,16 @@
+<section class="parent">
+    <section class="isoKuva">
+        <figure class="isoKuvaFigure">
+                <img src="{{phoneImage}}" alt="{{phone.id}}">
+        </figure>
+    </section>
+        <h3> {{phone.name}}</h3>
+        <p> {{phone.description}}</p>
+  
+        <section *ngFor="let phone of phone.images">
+            <img src="{{phone}}" alt="">
+        </section>
+
+</section>
+
+

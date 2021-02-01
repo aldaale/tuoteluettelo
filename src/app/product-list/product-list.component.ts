@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
    }
  
   ngOnInit(): void {
-    this.http.get<any[]>("../../assets/puhelinten-tuotetiedot/phones/phones.json").subscribe(
+    this.http.get<any[]>("../../assets/phones/phones.json").subscribe(
       (data) => {
         this.phones = data;
         console.log("phones:", this.phones)
