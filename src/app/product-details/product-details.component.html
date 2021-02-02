@@ -9,51 +9,56 @@
         <p> {{phone.description}}</p>
         
         <section class="pikkukuvatcontainer">
+
             <section class="pikkukuvat" *ngFor="let phone of phone.images">
                 <img src="{{phone}}" alt="{{phone.id}}">
             </section>
+            
         </section>
 
     </section>
 
 
-
 </section>
 
    <section class="tuotetiedotlisa">
-            <section class="yksi" *ngFor="let phone of phone.availability">
+            <section class="yksi">
                <h6>Availability and Networks</h6>
                <p style="font-weight: bold;">Availability</p>
-                <p> {{ phone}} </p>
+                <p> {{ phone.availability }} </p>
 
             </section>
-            <section class="kaksi" *ngFor="let phone of phone.battery">
+            <section class="kaksi">
                <h6>Battery</h6>
                <p style="font-weight: bold;">Type</p>
-                <p> {{phone}} </p>
+                <p> {{phone.battery.type}} </p>
                 <p style="font-weight: bold;">Talk Time</p>
-                <p> {{phone}} </p>
+                <p> {{phone.battery.talkTime}} </p>
                 <p style="font-weight: bold;">Standby Time (max)</p>
-                <p> {{phone}} </p>
+                <p> {{phone.battery.standbyTime}} </p>
 
             </section>
-            <!-- <section class="kolme" *ngFor="let phone of phone.availability">
+            <section class="kolme">
                <h6>Storage and Memory</h6>
                <p style="font-weight: bold;">RAM</p>
-                <p> {{phone}} </p>
+                <p> {{phone.storage.flash}} </p>
                 <p style="font-weight: bold;">Internal Storage</p>
-                <p> {{phone}} </p>
+                <p> {{phone.storage.ram}} </p>
 
             </section>
-            <section class="nelja" *ngFor="let phone of phone.availability">
+            <section class="nelja">
                <h6>Connectivity</h6>
                <p style="font-weight: bold;">Network Support</p>
                <p style="font-weight: bold;">WiFi</p>
-                <p> {{phone}} </p>
+                    <p>{{phone.connectivity.wifi}} </p>
                 <p style="font-weight: bold;">Bluetooth</p>
+                    <p>{{phone.connectivity.bluetooth}} </p>
                 <p style="font-weight: bold;">Infrared</p>
+                    <p>{{phone.connectivity.infrared}} </p>
                 <p style="font-weight: bold;">X</p>
-                <p style="font-weight: bold;">GPS</p>
 
-            </section> -->
+                <p style="font-weight: bold;">GPS</p>
+                    <p>{{phone.connectivity.gps}} </p>
+
+            </section> 
         </section>

@@ -45,15 +45,18 @@ h3 {
     width: 900px;
     /* margin: auto; */
     padding: 2rem;
+    align-items: baseline;
 }
 
 .tuotetiedotlisa > * {
     padding: 1.5rem;
+    /* align-items: baseline; */
 }
 
 h6 {
     border-bottom: solid lightgray 3px;
 }
+
 
 
 
