@@ -1,16 +1,59 @@
 <section class="parent">
     <section class="isoKuva">
         <figure class="isoKuvaFigure">
-                <img src="{{phoneImage}}" alt="{{phone.id}}">
+            <img src="{{phoneImage}}" alt="{{phone.id}}">
         </figure>
     </section>
+    <section class="tuotetiedot">
         <h3> {{phone.name}}</h3>
         <p> {{phone.description}}</p>
-  
-        <section *ngFor="let phone of phone.images">
-            <img src="{{phone}}" alt="">
+        
+        <section class="pikkukuvatcontainer">
+            <section class="pikkukuvat" *ngFor="let phone of phone.images">
+                <img src="{{phone}}" alt="{{phone.id}}">
+            </section>
         </section>
+
+    </section>
+
+
 
 </section>
 
+   <section class="tuotetiedotlisa">
+            <section class="yksi" *ngFor="let phone of phone.availability">
+               <h6>Availability and Networks</h6>
+               <p style="font-weight: bold;">Availability</p>
+                <p> {{ phone}} </p>
 
+            </section>
+            <section class="kaksi" *ngFor="let phone of phone.battery">
+               <h6>Battery</h6>
+               <p style="font-weight: bold;">Type</p>
+                <p> {{phone}} </p>
+                <p style="font-weight: bold;">Talk Time</p>
+                <p> {{phone}} </p>
+                <p style="font-weight: bold;">Standby Time (max)</p>
+                <p> {{phone}} </p>
+
+            </section>
+            <!-- <section class="kolme" *ngFor="let phone of phone.availability">
+               <h6>Storage and Memory</h6>
+               <p style="font-weight: bold;">RAM</p>
+                <p> {{phone}} </p>
+                <p style="font-weight: bold;">Internal Storage</p>
+                <p> {{phone}} </p>
+
+            </section>
+            <section class="nelja" *ngFor="let phone of phone.availability">
+               <h6>Connectivity</h6>
+               <p style="font-weight: bold;">Network Support</p>
+               <p style="font-weight: bold;">WiFi</p>
+                <p> {{phone}} </p>
+                <p style="font-weight: bold;">Bluetooth</p>
+                <p style="font-weight: bold;">Infrared</p>
+                <p style="font-weight: bold;">X</p>
+                <p style="font-weight: bold;">GPS</p>
+
+            </section> -->
+        </section>

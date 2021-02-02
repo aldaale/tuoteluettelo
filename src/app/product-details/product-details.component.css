@@ -1,0 +1,69 @@
+.parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 900px;
+}
+
+h3 {
+    border-bottom: solid lightgray 3px;
+    padding: 5px;
+}
+
+.pikkukuvatcontainer {
+    display: flex;
+}
+
+.pikkukuvat {
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+
+.pikkukuvat img {
+    width: 120px;
+    border-radius: 0.2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem;
+    margin: 1rem;
+    
+    /* hover off */
+    transition: all 0.2s ease-in-out; 
+   
+}
+.pikkukuvat:hover {
+    /* HOVER ON  */
+   transform: scale(1.1); 
+   margin: 10px;
+ }
+
+.tuotetiedotlisa {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 900px;
+    /* margin: auto; */
+    padding: 2rem;
+}
+
+.tuotetiedotlisa > * {
+    padding: 1.5rem;
+}
+
+h6 {
+    border-bottom: solid lightgray 3px;
+}
+
+
+
+
+
+
+/* .parent > * {
+    flex-basis: 0px;
+    flex-grow: 1;
+    order: 2;
+
+} */
+

@@ -14,6 +14,8 @@ export class ProductDetailsComponent implements OnInit {
   phoneId: String;
   phone: any;
   phoneImage: any;
+  phoneSaatavuus: any;
+  phoneBattery: any[];
  
   constructor(
     private route: ActivatedRoute, private http: HttpClient) { }
@@ -27,6 +29,8 @@ export class ProductDetailsComponent implements OnInit {
     this.http.get<any>(`../../assets/phones/${this.phoneId}.json`).subscribe(data => {
       this.phone = data;
       this.phoneImage = data.images[0];
+      this.phoneSaatavuus = data.availability[0];
+      this.phoneBattery = data.battery;
     })
   }
  

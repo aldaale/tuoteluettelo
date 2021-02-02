@@ -17,6 +17,7 @@ import { OrderModule } from 'ngx-order-pipe';
 
 const appRoutes: Routes = [
   { path: 'products', component: ProductListComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'products/:productId', component: ProductDetailsComponent },
 ];
 
